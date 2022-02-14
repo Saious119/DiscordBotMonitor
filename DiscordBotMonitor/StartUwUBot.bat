@@ -1,0 +1,1 @@
+node ../../Discord-Bots/UwUBot/uwu.js
