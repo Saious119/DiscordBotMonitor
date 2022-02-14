@@ -1,10 +1,20 @@
+using Microsoft.AspNetCore.HttpOverrides;
+using System.Net;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddServerSideBlazor();
 builder.Services.AddRazorPages();
 
+builder.Services.AddApplicationInsightsTelemetry();
+
 var app = builder.Build();
+
+app.UseForwardedHeaders(new ForwardedHeadersOptions
+{
+    ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
+});
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
