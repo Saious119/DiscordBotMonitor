@@ -1,5 +1,6 @@
 #!/bin/bash
 while true 
 do
-	dotnet --project ../../Discord-Bots/DickJohnson/
+	cd ../../Discord-Bots/DickJohnson/
+	dotnet run
 done
