@@ -23,7 +23,7 @@ namespace DBM
                             FileName = startscript,
                             Arguments = "",
                             UseShellExecute = false,
-                            WorkingDirectory = "/home/andym/DiscordBotMonitor/DBM",
+                            WorkingDirectory = "/home/andym/DiscordBotMonitor/DBM/",
                             RedirectStandardOutput = true,
                             CreateNoWindow = false
                         }
