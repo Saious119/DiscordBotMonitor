@@ -1,5 +1,5 @@
 #!/bin/bash
 while true 
 do
-	/usr/bin/dotnet ../../../Discord-Bots/DickJohnson
+	dotnet run ../../../Discord-Bots/DickJohnson
 done
