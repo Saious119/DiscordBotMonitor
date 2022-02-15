@@ -15,7 +15,7 @@ app.UseForwardedHeaders(new ForwardedHeadersOptions
 {
     ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
 });
-
+app.UseAuthentication();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
