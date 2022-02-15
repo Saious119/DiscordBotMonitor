@@ -5,26 +5,30 @@
 <p>>UwUBot Status: @UwUBotStatus</p>
 
 <button class="btn btn-primary" @onclick="StartUwUBot">Start UwUBot</button>
+<button class="btn btn-primary" @onclick="StopUwUBot">Stop UwUBot</button>
+
 @code {
     private string UwUBotStatus = "Offline :'(";
+    Process CurrentProc;
 
     private void StartUwUBot()
     {
         try
         {
 
-            Process proc = new Process
+            CurrentProc = new Process
             {
                 StartInfo = new ProcessStartInfo
                 {
-                    FileName = "~/DiscordBotManager/DBM/StartUwUBot.sh",
+                    FileName = "StartUwUBot.sh",
                     Arguments = "",
                     UseShellExecute = false,
+                    WorkingDirectory = "/home/andym/DiscordBotMonitor/DBM",
                     RedirectStandardOutput = true,
                     CreateNoWindow = false
                 }
             };
-            proc.Start();
+            CurrentProc.Start();
             UwUBotStatus = "Online";
         }
         catch(Exception e)
@@ -33,6 +37,12 @@
             Console.WriteLine(e.Message);
         }
 
+    }
+    private void StopUwUBot()
+    {
+        CurrentProc.Kill(true);
+        CurrentProc.Dispose();
+        UwUBotStatus = "Offline";
     }
 
 }
