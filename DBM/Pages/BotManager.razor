@@ -13,36 +13,42 @@
 
     private void StartUwUBot()
     {
-        try
+        if (UwUBotStatus != "Online")
         {
-
-            CurrentProc = new Process
+            try
             {
-                StartInfo = new ProcessStartInfo
-                {
-                    FileName = "StartUwUBot.sh",
-                    Arguments = "",
-                    UseShellExecute = false,
-                    WorkingDirectory = "/home/andym/DiscordBotMonitor/DBM",
-                    RedirectStandardOutput = true,
-                    CreateNoWindow = false
-                }
-            };
-            CurrentProc.Start();
-            UwUBotStatus = "Online";
-        }
-        catch(Exception e)
-        {
-            UwUBotStatus = "Offline :'(";
-            Console.WriteLine(e.Message);
+
+                CurrentProc = new Process
+                    {
+                        StartInfo = new ProcessStartInfo
+                        {
+                            FileName = "StartUwUBot.sh",
+                            Arguments = "",
+                            UseShellExecute = false,
+                            WorkingDirectory = "/home/andym/DiscordBotMonitor/DBM",
+                            RedirectStandardOutput = true,
+                            CreateNoWindow = false
+                        }
+                    };
+                CurrentProc.Start();
+                UwUBotStatus = "Online";
+            }
+            catch (Exception e)
+            {
+                UwUBotStatus = "Offline :'(";
+                Console.WriteLine(e.Message);
+            }
         }
 
     }
     private void StopUwUBot()
     {
-        CurrentProc.Kill(true);
-        CurrentProc.Dispose();
-        UwUBotStatus = "Offline";
+        if (UwUBotStatus == "Online")
+        {
+            CurrentProc.Kill(true);
+            CurrentProc.Dispose();
+            UwUBotStatus = "Offline";
+        }
     }
 
 }
