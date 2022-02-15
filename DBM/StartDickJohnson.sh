@@ -1,5 +1,5 @@
 #!/bin/bash
 while true 
 do
-	dotnet run ../../../Discord-Bots/DickJohnson
+	dotnet ../../Discord-Bots/DickJohnson/bin/Debug/net6.0/DickJohnson.dll
 done
