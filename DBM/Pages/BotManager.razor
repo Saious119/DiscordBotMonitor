@@ -1,0 +1,38 @@
+﻿@page "/botmanager"
+@using System.Diagnostics
+<PageTitle>Bot Manager</PageTitle>
+<h3>BotManager</h3>
+<p>>UwUBot Status: @UwUBotStatus</p>
+
+<button class="btn btn-primary" @onclick="StartUwUBot">Start UwUBot</button>
+@code {
+    private string UwUBotStatus = "Offline :'(";
+
+    private void StartUwUBot()
+    {
+        try
+        {
+
+            Process proc = new Process
+            {
+                StartInfo = new ProcessStartInfo
+                {
+                    FileName = "~/DiscordBotManager/DBM/StartUwUBot.sh",
+                    Arguments = "",
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    CreateNoWindow = false
+                }
+            };
+            proc.Start();
+            UwUBotStatus = "Online";
+        }
+        catch(Exception e)
+        {
+            UwUBotStatus = "Offline :'(";
+            Console.WriteLine(e.Message);
+        }
+
+    }
+
+}
