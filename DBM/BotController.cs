@@ -9,7 +9,7 @@ namespace DBM
         string BotName;
         public BotController(string Botname)  { BotName = Botname; } 
 
-        public void StartBot(string startscript)
+        public void StartBot(string startscript, string exec, string dir)
         {
             if (BotStatus != "Online")
             {
@@ -20,10 +20,10 @@ namespace DBM
                     {
                         StartInfo = new ProcessStartInfo
                         {
-                            FileName = startscript,
-                            Arguments = "",
+                            FileName = exec,
+                            Arguments = startscript,
                             UseShellExecute = false,
-                            WorkingDirectory = "/home/andym/DiscordBotMonitor/DBM/",
+                            WorkingDirectory = dir,
                             RedirectStandardOutput = true,
                             CreateNoWindow = false
                         }
