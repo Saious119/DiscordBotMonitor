@@ -12,9 +12,15 @@
 <button class="btn btn-primary" @onclick="StartDickJohnson">Start Dick Johnson</button>
 <button class="btn btn-primary" @onclick="StopDickJohnson">Stop Dick Johnson</button>
 
+<p>PirateBot Status: @PirateBot.BotStatus</p>
+
+<button class="btn btn-primary" @onclick="StartPirateBot">Start PirateBot</button>
+<button class="btn btn-primary" @onclick="StopPirateBot">Stop PirateBot</button>
+
 @code {
     BotController UwUBot = new BotController("UwUBot");
     BotController DickJohnson = new BotController("Dick Johnson");
+    BotController PirateBot = new BotController("PirateBot");
     private void StartUwUBot()
     {
         UwUBot.StartBot("uwu.js", "/bin/node", "../../../../../../Discord-Bots/UwUBot/");
@@ -31,6 +37,13 @@
     {
         DickJohnson.StopBot();
     }
-
+    private void StartPirateBot()
+    {
+        PirateBot.StartBot("run PirateBot.go markov.go", "/bin/go", "../../../../../../Discord-Bots/PirateBot/");
+    }
+    private void StopPirateBot()
+    {
+        PirateBot.StopBot();
+    }
 
 }
