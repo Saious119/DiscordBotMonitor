@@ -7,6 +7,7 @@ namespace DBM
         public string BotStatus = "Offline :'(";
         Process CurrentProc;
         string BotName;
+        public string Error = "No Errors!";
         public BotController(string Botname)  { BotName = Botname; } 
 
         public void StartBot(string startscript, string exec, string dir)
@@ -34,6 +35,7 @@ namespace DBM
                 catch (Exception e)
                 {
                     BotStatus = "Offline :'(";
+                    Error = e.Message;
                     Console.WriteLine(e.Message);
                 }
             }

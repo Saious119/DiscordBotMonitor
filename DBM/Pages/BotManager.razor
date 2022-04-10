@@ -7,6 +7,8 @@
 <button class="btn btn-primary" @onclick="StartUwUBot">Start UwUBot</button>
 <button class="btn btn-primary" @onclick="StopUwUBot">Stop UwUBot</button>
 
+<p>Error Box: @UwUBot.Error</p>
+
 <p>Dick Johnson Status: @DickJohnson.BotStatus</p>
 
 <button class="btn btn-primary" @onclick="StartDickJohnson">Start Dick Johnson</button>
@@ -42,6 +44,8 @@
 <button class="btn btn-primary" @onclick="StartOwOBot">Start OwO Bot</button>
 <button class="btn btn-primary" @onclick="StopOwOBot">Stop OwO Bot</button>
 
+
+
 @code {
     BotController UwUBot = new BotController("UwUBot");
     BotController DickJohnson = new BotController("Dick Johnson");
@@ -54,7 +58,7 @@
 
     private void StartUwUBot()
     {
-        UwUBot.StartBot("uwu.js", "/bin/node", "../../../../../../Discord-Bots/UwUBot/");
+        UwUBot.StartBot("uwu.js", "/bin/node", "/home/andym/Discord-Bots/UwUBot/");
     }
     private void StopUwUBot()
     {
@@ -62,7 +66,7 @@
     }
     private void StartDickJohnson()
     {
-        DickJohnson.StartBot("run", "/bin/dotnet", "../../../../../../Discord-Bots/DickJohnson");
+        DickJohnson.StartBot("run", "/bin/dotnet", "/home/andym/Discord-Bots/DickJohnson");
     }
     private void StopDickJohnson()
     {
@@ -70,7 +74,7 @@
     }
     private void StartPirateBot()
     {
-        PirateBot.StartBot("run PirateBot.go markov.go", "/bin/go", "../../../../../../Discord-Bots/PirateBot/");
+        PirateBot.StartBot("run PirateBot.go markov.go", "/bin/go", "/home/andym/Discord-Bots/PirateBot/");
     }
     private void StopPirateBot()
     {
