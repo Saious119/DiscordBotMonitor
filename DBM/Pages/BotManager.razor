@@ -17,10 +17,41 @@
 <button class="btn btn-primary" @onclick="StartPirateBot">Start PirateBot</button>
 <button class="btn btn-primary" @onclick="StopPirateBot">Stop PirateBot</button>
 
+<p>Tarot Bot Status: @TarotBot.BotStatus</p>
+
+<button class="btn btn-primary" @onclick="StartTarotBot">Start Tarot Bot</button>
+<button class="btn btn-primary" @onclick="StopTarotBot">Stop Tarot Bot</button>
+
+<p>JonTron Bot Status: @JonTronBot.BotStatus</p>
+
+<button class="btn btn-primary" @onclick="StartJonTronBot">Start JonTron Bot</button>
+<button class="btn btn-primary" @onclick="StopJonTronBot">Stop JonTron Bot</button>
+
+<p>OyVey Bot Status: @OyVeyBot.BotStatus</p>
+
+<button class="btn btn-primary" @onclick="StartOyVeyBot">Start OyVey Bot</button>
+<button class="btn btn-primary" @onclick="StopOyVeyBot">Stop OyVey Bot</button>
+
+<p>TerryDavis Bot Status: @TerryDavisBot.BotStatus</p>
+
+<button class="btn btn-primary" @onclick="StartTerryDavisBot">Start TerryDavis Bot</button>
+<button class="btn btn-primary" @onclick="StopTerryDavisBot">Stop TerryDavis Bot</button>
+
+<p>OwO Bot Status: @OwOBot.BotStatus</p>
+
+<button class="btn btn-primary" @onclick="StartOwOBot">Start OwO Bot</button>
+<button class="btn btn-primary" @onclick="StopOwOBot">Stop OwO Bot</button>
+
 @code {
     BotController UwUBot = new BotController("UwUBot");
     BotController DickJohnson = new BotController("Dick Johnson");
     BotController PirateBot = new BotController("PirateBot");
+    BotController TarotBot = new BotController("TarotBot");
+    BotController JonTronBot = new BotController("JonTronBot");
+    BotController OyVeyBot = new BotController("OyVeyBot");
+    BotController TerryDavisBot = new BotController("TerryDavisBot");
+    BotController OwOBot = new BotController("OwOBot");
+
     private void StartUwUBot()
     {
         UwUBot.StartBot("uwu.js", "/bin/node", "../../../../../../Discord-Bots/UwUBot/");
@@ -45,5 +76,46 @@
     {
         PirateBot.StopBot();
     }
+    private void StartTarotBot()
+    {
+        TarotBot.StartBot("tarot.js", "/bin/node", "../../../../../../Discord-Bots/TarotBot/");
+    }
+    private void StopTarotBot()
+    {
+        TarotBot.StopBot();
+    }
+    private void StartJonTronBot()
+    {
+        JonTronBot.StartBot("jontron.js", "/bin/node", "../../../../../../Discord-Bots/JonTronBot/");
+    }
+    private void StopJonTronBot()
+    {
+        JonTronBot.StopBot();
+    }
+    private void StartOyVeyBot()
+    {
+        OyVeyBot.StartBot("OyVeyBot.js", "/bin/node", "../../../../../../Discord-Bots/OyVeyBot/");
+    }
+    private void StopOyVeyBot()
+    {
+        OyVeyBot.StopBot();
+    }
+    private void StartTerryDavisBot()
+    {
+        TerryDavisBot.StartBot("terrydavisbot.js", "/bin/node", "../../../../../../Discord-Bots/TerryDavisBot/");
+    }
+    private void StopTerryDavisBot()
+    {
+        TerryDavisBot.StopBot();
+    }
+    private void StartOwOBot()
+    {
+        OwOBot.StartBot("OwOBot.js", "/home/andy/.nvm/versions/node/v16.14.2/bin/node", "../../../../../../Discord-Bots/OwOBot/"); //this weird node is for the latest installed by nvm
+    }
+    private void StopOwOBot()
+    {
+        OwOBot.StopBot();
+    }
+
 
 }
